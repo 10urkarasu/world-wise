@@ -7,6 +7,10 @@ import Flag from "../flag/Flag";
 import { useUrlPosition } from "../../hooks/useUrlPosition";
 import Message from "../message/Message";
 import Spinner from "../spinner/Spinner";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useCities } from "../../contexts/CitiesContext";
+import { useNavigate } from "react-router-dom";
 
 export function convertToEmoji(countryCode) {
     const codePoints = countryCode
@@ -19,6 +23,7 @@ export function convertToEmoji(countryCode) {
 const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 function Form() {
+    const { createCity, isLoading } = useCities();
     const [cityName, setCityName] = useState("");
     const [country, setCountry] = useState("");
     const [date, setDate] = useState(new Date());
@@ -27,8 +32,10 @@ function Form() {
     const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
     const [emoji, setEmoji] = useState("");
     const [geocodingError, setGeocodingError] = useState("");
+    const navigate = useNavigate();
     useEffect(
         function () {
+            if (!mapLat && !mapLng) return;
             async function fetchCityData() {
                 try {
                     setIsLoadingGeocoding(true);
@@ -55,12 +62,36 @@ function Form() {
         [mapLat, mapLng]
     );
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        if (!cityName || !date) return;
+
+        const newCity = {
+            cityName,
+            country,
+            emoji,
+            date,
+            notes,
+            position: { lat: mapLat, lng: mapLng },
+        };
+
+        await createCity(newCity);
+        navigate("/app/cities");
+    }
+
     if (isLoadingGeocoding) return <Spinner />;
+
+    if (!mapLat && !mapLng)
+        return <Message message="Start by clicking somewhere on the map" />;
 
     if (geocodingError) return <Message message={geocodingError} />;
 
     return (
-        <form className={styles.form}>
+        <form
+            className={`${styles.form} ${isLoading ? styles.form : ""}`}
+            onSubmit={handleSubmit}
+        >
             <div className={styles.row}>
                 <label htmlFor="cityName">City name</label>
                 <input
@@ -75,10 +106,16 @@ function Form() {
 
             <div className={styles.row}>
                 <label htmlFor="date">When did you go to {cityName}?</label>
-                <input
+                {/* <input
                     id="date"
                     onChange={(e) => setDate(e.target.value)}
                     value={date}
+                /> */}
+                <DatePicker
+                    id="date"
+                    onChange={(date) => setDate(date)}
+                    selected={date}
+                    dateFormat="dd/MM/yyyy"
                 />
             </div>
 
