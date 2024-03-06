@@ -1,40 +1,76 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": "73930385"
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
+      "id": "3274",
+      "cityName": "Arnavutkoy",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-03-05T20:10:02.911Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": "17806751"
+        "lat": 41.18357363199765,
+        "lng": 28.741950988769535
+      }
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "94a1",
+      "cityName": "Istanbul",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-03-05T20:10:13.839Z",
+      "notes": "",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
+        "lat": 41.009971313794296,
+        "lng": 28.95601272583008
+      }
+    },
+    {
+      "id": "04e8",
+      "cityName": "Odunpazari",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-03-05T20:10:28.151Z",
+      "notes": "",
+      "position": {
+        "lat": 39.76846413894052,
+        "lng": 30.51864624023438
+      }
+    },
+    {
+      "id": "9426",
+      "cityName": "Sehitkamil",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-03-05T20:11:29.367Z",
+      "notes": "",
+      "position": {
+        "lat": 37.08694870883852,
+        "lng": 37.395744323730476
+      }
+    },
+    {
+      "id": "1f42",
+      "cityName": "Selcuklu",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-03-05T20:11:48.373Z",
+      "notes": "",
+      "position": {
+        "lat": 37.92824717265132,
+        "lng": 32.506828308105476
+      }
+    },
+    {
+      "id": "7b48",
+      "cityName": "Ankara",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2023-09-14T20:14:33.000Z",
+      "notes": "Güzeldi",
+      "position": {
+        "lat": 39.91975004458887,
+        "lng": 32.85409927368165
+      }
     }
   ]
 }
