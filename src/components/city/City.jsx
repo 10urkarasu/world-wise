@@ -3,7 +3,7 @@ import styles from "./City.module.css";
 import { useEffect } from "react";
 import { useCities } from "../../contexts/CitiesContext";
 import Spinner from "../spinner/Spinner";
-import BackButton from "../backbutton/backButton";
+import BackButton from "../backbutton/BackButton";
 
 const formatDate = (date) =>
     new Intl.DateTimeFormat("en", {
