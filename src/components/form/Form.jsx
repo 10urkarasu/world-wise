@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import styles from "./Form.module.css";
 import Button from "../button/Button";
-import BackButton from "../backbutton/backButton";
+import BackButton from "../backbutton/BackButton";
 import Flag from "../flag/Flag";
 import { useUrlPosition } from "../../hooks/useUrlPosition";
 import Message from "../message/Message";
