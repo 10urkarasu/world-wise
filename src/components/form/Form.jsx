@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./Form.module.css";
 import Button from "../button/Button";
@@ -33,6 +33,22 @@ function Form() {
     const [emoji, setEmoji] = useState("");
     const [geocodingError, setGeocodingError] = useState("");
     const navigate = useNavigate();
+    const formRef = useRef(null);
+    useEffect(() => {
+        if (formRef.current) {
+            formRef.current.focus();
+            scrollToElement();
+        }
+    }, []);
+
+    const scrollToElement = () => {
+        if (formRef.current) {
+            window.scrollTo({
+                top: formRef.current.offsetTop,
+                behavior: "smooth",
+            });
+        }
+    };
     useEffect(
         function () {
             if (!mapLat && !mapLng) return;
@@ -89,6 +105,7 @@ function Form() {
 
     return (
         <form
+            ref={formRef}
             className={`${styles.form} ${isLoading ? styles.form : ""}`}
             onSubmit={handleSubmit}
         >

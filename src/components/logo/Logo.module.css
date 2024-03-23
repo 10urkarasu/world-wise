@@ -1,3 +1,17 @@
 .logo {
-  height: 5.2rem;
+    height: 4.2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        margin-bottom: 1.1vh;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .logo {
+        visibility: hidden;
+        height: 0;
+        margin-bottom: 0;
+    }
 }
