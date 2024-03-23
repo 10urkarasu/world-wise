@@ -1,6 +1,6 @@
 import { createContext, useEffect, useContext, useReducer } from "react";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://worldwise-mock-api.onrender.com";
 const CitiesContext = createContext();
 const initialState = {
     cities: [],
