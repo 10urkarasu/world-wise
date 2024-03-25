@@ -32,7 +32,7 @@ The demo version of the project is hosted on Render using json-server for the mo
 
 ## Contributors
 
-- [Your Name](https://github.com/10urkarasu)
+- [Onur Karasu](https://github.com/10urkarasu)
 
 ## License
 
